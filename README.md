@@ -111,3 +111,34 @@ DATABASES = {
 
 1. URL(프로젝트/common/urls.py)
 
+### 게시글 목록 구현 순서
+
+1. 템플릿(프로젝트/templates/board/list.html)
+2. 모델(프로젝트/board/models.py)
+3. 뷰(프로젝트/board/views.py)
+4. URL(프로젝트/board/urls.py)
+
+### 게시글 등록 구현 순서
+
+1. 템플릿(프로젝트/templates/board/create.html)
+2. 폼(프로젝트/board/forms.py)
+3. 뷰(프로젝트/board/views.py)
+4. URL(프로젝트/board/urls.py)
+
+### 게시글 보기 구현 순서
+
+1. 템플릿(프로젝트/templates/board/read.html)
+2. 뷰(프로젝트/board/views.py)
+3. URL(프로젝트/board/urls.py)
+
+### 게시글 수정 구현 순서
+
+1. 템플릿(프로젝트/templates/board/update.html)
+2. 폼(프로젝트/board/forms.py)
+3. 뷰(프로젝트/board/views.py)
+4. URL(프로젝트/board/urls.py)
+
+### 게시글 삭제 구현 순서
+
+1. 뷰(프로젝트/board/views.py)
+2. URL(프로젝트/board/urls.py)

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-12">
+            {% include "message.html" %}
+            <div class="card">
+                <div class="card-header">
+                    {{ board.subject }}
+                </div>
+                <div class="card-body">
+                    <p>등록일 : {{ board.updated_date }}</p>
+                    <p>작성자 : {{ board.author.username }}</p>
+                    <p>{{ board.content }}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'board:board_list' %}" class="btn btn-secondary">목록</a>
+                    <div class="float-end">
+                        <a href="{% url 'board:board_update' board.id %}" class="btn btn-warning">수정</a>
+                        <button type="button" class="btn btn-danger delete-button" data-url="{% url 'board:board_delete' board.id %}">삭제</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 삭제 모달 -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">글 삭제</h5>
+      </div>
+      <div class="modal-body">
+        <p>글을 삭제할까요?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+        <button type="button" class="btn btn-danger" id="deleteConfirm">삭제</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--// 삭제 모달 -->
+{% endblock %}
+
+{% block script %}
+<script>
+    let url;
+    let deleteModal = new bootstrap.Modal($("#deleteModal"));
+
+    $(".delete-button").on("click", function() {
+        url = $(this).data("url");
+        deleteModal.show();
+    });
+
+    $("#deleteConfirm").on("click", function() {
+        $(location).attr("href", url);
+    });
+</script>
+{% endblock %}
