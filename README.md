@@ -142,3 +142,35 @@ DATABASES = {
 
 1. 뷰(프로젝트/board/views.py)
 2. URL(프로젝트/board/urls.py)
+
+### 댓글 보기 구현 순서
+
+1. 모델(프로젝트/board/models.py)
+2. 템플릿(프로젝트/templates/board/read.html)
+3. 뷰(프로젝트/board/views.py)
+
+### 댓글 등록 구현 순서
+
+1. 폼(프로젝트/board/forms.py)
+2. 템플릿(프로젝트/templates/board/read.html)
+3. 뷰(프로젝트/board/views.py)
+4. URL(프로젝트/board/urls.py)
+
+### 댓글 수정 구현 순서
+
+1. 폼(프로젝트/board/forms.py)
+2. 템플릿(프로젝트/templates/board/read.html)
+3. 뷰(프로젝트/board/views.py)
+4. URL(프로젝트/board/urls.py)
+
+### 댓글 삭제 구현 순서
+
+1. 뷰(프로젝트/board/views.py)
+2. URL(프로젝트/board/urls.py)
+
+## 미션
+
+1. 게시글 등록 후 게시글 목록이 아니라 게시글 보기로 넘어가기
+2. 게시글 보기에서 본인글이 아니면 수정/삭제 버튼 숨김 처리
+3. 댓글 보기에서 본인글이 아니면 수정/삭제 버튼 숨김 처리
+4. 게시글 등록에서 목록 버튼 누르면 1페이지 목록이 아니라 이전에 보던 페이지 목록으로 넘어가기

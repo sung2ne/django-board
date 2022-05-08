@@ -10,4 +10,7 @@ urlpatterns = [
     path("board_read/<int:board_id>", views.board_read, name="board_read"),
     path("board_update/<int:board_id>", views.board_update, name="board_update"),
     path("board_delete/<int:board_id>", views.board_delete, name="board_delete"),
+    path("reply_create/<int:board_id>", views.reply_create, name="reply_create"),
+    path("reply_update/<int:board_id>/<int:reply_id>", views.reply_update, name="reply_update"),
+    path("reply_delete/<int:board_id>/<int:reply_id>", views.reply_delete, name="reply_delete"),
 ]
