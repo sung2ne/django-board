@@ -26,8 +26,8 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div class="navbar-nav">
-						<a class="nav-link" href="#">사용자</a>
 						<a class="nav-link" href="{% url 'board:board_list' %}">게시판</a>
+						<a class="nav-link" href="{% url 'melon:chart' %}">멜론차트</a>
 						{% if user.is_authenticated %}
 							<a class="nav-link" href="{% url 'common:profile_view' %}">프로필</a>
 							<a class="nav-link" href="{% url 'common:logout' %}">로그아웃</a>

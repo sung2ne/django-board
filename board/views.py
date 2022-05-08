@@ -16,7 +16,7 @@ def board_list(request):
     object_list = paginator.get_page(page)
 
     context = {"board_list": object_list}
-    return render(request, "board/list.html", context)
+    return render(request, "board/chart.html", context)
 
 
 # 게시글 등록

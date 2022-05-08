@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load my_filter %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-3">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <td>순위</td>
+                    <td>노래</td>
+                    <td>가수</td>
+                    <td>앨범</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% if chart_list %}
+                    {% for chart in chart_list %}
+                        <tr>
+                            <td>{{ chart.rank }}</td>
+                            <td>{{ chart.rank01 }}</td>
+                            <td><a href="https://www.melon.com/artist/timeline.htm?artistId={{ chart.rank02_id }}" target="_blank">{{ chart.rank02 }}</a></td>
+                            <td>{{ chart.rank03 }}</td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                <tr>
+                    <td colspan="4">등록된 내용이 없습니다.</td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+{% endblock %}
